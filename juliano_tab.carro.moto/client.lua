@@ -1,4 +1,6 @@
-Citizen.CreateThread(function()       -------desativa o tab
+-- DESATIVA O TAB
+
+Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 		local ped = PlayerPedId()
@@ -9,7 +11,9 @@ Citizen.CreateThread(function()       -------desativa o tab
 	end
 end)
 
-Citizen.CreateThread(function()     ------desativa a coronhada
+-- DESATIVA O PONTAPÉ DA MOTO
+
+Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
 		local ped = PlayerPedId()
@@ -21,12 +25,15 @@ Citizen.CreateThread(function()     ------desativa a coronhada
     end
 end)
 
---CreateThread(function()        ------------desativa os sons de tiros e isso 
---	StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE");
---	SetAudioFlag("PoliceScannerDisabled",true); 
---end)
+-- DESATIVA SONS DE TIROS E ISSO
+CreateThread(function()
+	StartAudioScene("CHARACTER_CHANGE_IN_SKY_SCENE");
+	SetAudioFlag("PoliceScannerDisabled",true); 
+end)
 
-Citizen.CreateThread(function()             ------------desativa o controle no carro enquanto estiver no ar
+-- DESATIVA O CONTROLO DO CARRO QUANDO ESTIVER NO AR
+
+Citizen.CreateThread(function()             
     while true do
         Citizen.Wait(1)
         local veh = GetVehiclePedIsIn(PlayerPedId(),false)
@@ -40,4 +47,3 @@ Citizen.CreateThread(function()             ------------desativa o controle no c
         end
     end
 end)
-
