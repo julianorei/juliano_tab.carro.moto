@@ -1,0 +1,2 @@
+description 'JULIANO SCRIPT TAB.CARRO.MOTO!'
+client_script 'client.lua'
